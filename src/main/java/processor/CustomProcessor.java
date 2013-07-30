@@ -12,9 +12,9 @@ public class CustomProcessor<T> implements ItemProcessor<T,T>{
 
     @Override
     public T process(T item) throws Exception {
-        if(((CustomerCredit)item).getName().equals("redbull")){
-          throw new Exception("Redbull not allowed");
-        }
+//        if(((CustomerCredit)item).getName().equals("redbull")){
+//          throw new Exception("Redbull not allowed");
+//        }
         return item;
     }
 }
