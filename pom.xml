@@ -8,5 +8,27 @@
     <artifactId>SpringBatch</artifactId>
     <version>1.0</version>
 
-    
+    <properties>
+        <batch.version>2.2.0.RELEASE</batch.version>
+    </properties>
+
+     <dependencies>
+         <dependency>
+             <groupId>org.springframework.batch</groupId>
+             <artifactId>spring-batch-core</artifactId>
+             <version>${batch.version}</version>
+         </dependency>
+         <dependency>
+             <groupId>org.springframework.batch</groupId>
+             <artifactId>spring-batch-test</artifactId>
+             <version>${batch.version}</version>
+         </dependency>
+
+         <dependency>
+             <groupId>log4j</groupId>
+             <artifactId>log4j</artifactId>
+             <version>1.2.17</version>
+         </dependency>
+
+     </dependencies>
 </project>

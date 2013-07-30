@@ -7,9 +7,14 @@
     <job:job id="transferJob">
         <job:step id="copyStep">
             <job:tasklet>
-                <job:chunk reader="itemReader"  writer="itemWriter" commit-interval="2"/>
+                <job:chunk reader="itemReader"  processor="itemProcessor" writer="itemWriter" commit-interval="2"/>
             </job:tasklet>
         </job:step>
+        <job:listeners>
+            <job:listener>
+                <bean id="jobLogging" class="listeners.JobListener"/>
+            </job:listener>
+        </job:listeners>
     </job:job>
 
     <bean id="itemReader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
@@ -43,6 +48,10 @@
                 </property>
             </bean>
         </property>
+    </bean>
+
+    <bean id= "itemProcessor" class="processor.CustomProcessor">
+
     </bean>
 
     <bean id="jobLauncher"
